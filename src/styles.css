@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Platypi:wght@500&display=swap');
+
+:root {
+  --black: #000000;
+  --gray: #4F4F4F;
+
+  --title-font-size: 2rem;
+  --subtitle-font-size: 1.2rem;
+  --regular-font-size: 0.875rem;
+  --small-font-size: 0.575rem;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  overflow-wrap: break-word;
+}
+
+body {
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: var(--regular-font-size);
+  color: var(--black);
+  padding: 1.5rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+section.txt-wrapper {
+  margin-block: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+section.txt-wrapper h1 {
+  font-family: 'Platypi', Georgia, serif;
+  font-size: var(--title-font-size);
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+div.txt-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 320px;
+
+  h2 {
+    font-size: var(--subtitle-font-size);
+    text-transform: uppercase;
+  }
+}
+
+section.imgs-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 1.375rem;
+}
+
+section.imgs-wrapper > *:nth-child(even) {
+  padding-top: 3rem;
+}
+
+div.single-card {
+  display: flex;
+  gap: 0rem;
+
+  .role {
+    writing-mode: vertical-rl;
+    font-family: 'Platypi', Georgia, serif;
+    font-size: clamp(var(--small-font-size), 2.4vw, var(--regular-font-size));
+    text-transform: uppercase;
+  }
+
+  figure figcaption {
+    font-size: clamp(var(--regular-font-size), 3.7vw, var(--subtitle-font-size));
+    font-weight: 700;
+    margin-top: 0.5rem;
+  }
+}
+
+footer {
+  padding-block: 3rem 1.5rem;
+}
+
+.attribution {
+  font-size: 12px;
+  text-align: center;
+}
+
+.attribution a {
+  font-weight: 700;
+  color: var(--gray);
+  cursor: pointer;
+
+  &::visited {
+    color: var(--black)
+  }
+}
