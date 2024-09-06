@@ -1,59 +1,104 @@
 # Make It Real - My Team Page
 
-<img src="./design/desktop-preview.jpg" width="700">
+This is a solution to the **My Team Page** project of the Make It Real course.
 
-## Reto
+## Table of contents
 
-Su desafío es construir una pagina responsive para mostrar a tu team y lograr que se parezca lo más posible al diseño.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-Puedes usar cualquier herramienta que te guste para ayudarte a completar el desafío. Entonces, si tienes algo que te gustaría practicar, no dudes en intentarlo.
+## Overview
 
-Sus usuarios deberían poder:
+### The challenge
 
-- Ver el diseño óptimo según el tamaño de pantalla de su dispositivo
+- Build the basic structure of the page with HTML.
+- Apply styles to the page using CSS following the layouts indicated in the "design" folder.
 
-## Diseño
+### Screenshot
 
-Los diseños están en formato JPG estático. El uso de archivos JPG significará que deberá usar su mejor criterio para estilos como "tamaño de fuente", "padding" y "margen".
+![Desktop view](./assets/screenshot.png)
 
-### Style Guide
+## My process
 
-Los diseños se crearon con los siguientes anchos:
+### Built with
 
-- Mobile: 375px
-- Desktop: 1440px
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- Mobile-first workflow
 
-## Colores
+### What I learned
 
-### Primary
+This project especially helped me to reinforce advanced or unusual CSS properties.
+```html
+<body>
+  <main>
+    <section class="txt-wrapper">
+      <h1>The creative crew</h1>
+      <div class="txt-info">
+          <h2>Who we are</h2>
+          <p>We are team of creatively diverse. driven. innovative individuals working in various locations from the world.</p>
+      </div>
+    </section>
+    <section class="imgs-wrapper">
+      <div class="single-card">
+        <figure>
+          <img src="/assets/photo_1.png" alt="product-owner-photo"/>
+          <figcaption>Bill Mahoney</figcaption>
+        </figure>
+        <div class="role">Product Owner</div>
+      </div>
+      ...
+    </section>
+  </main>
+  <footer>...</footer>
+<body>
+```
+```css
+section.imgs-wrapper > *:nth-child(even) {
+  padding-top: 3rem;
+}
 
-- Black: #000000
+div.single-card {
+  display: flex;
+  gap: 0rem;
 
-## Tipografía
+  .role {
+    writing-mode: vertical-rl;
+    font-family: 'Platypi', Georgia, serif;
+    font-size: clamp(var(--small-font-size), 2.4vw, var(--regular-font-size));
+    text-transform: uppercase;
+  }
 
-### Body Copy
+  figure figcaption {
+    font-size: clamp(var(--regular-font-size), 3.7vw, var(--subtitle-font-size));
+    font-weight: 700;
+    margin-top: 0.5rem;
+  }
+}
+```
 
-- Font size: 18px/14px
+### Continued development
 
-### Font
+Working on this project made me realize that there are still advanced CSS topics to learn, such as the dynamic font size in relation to the *viewport width* or the `writing-mode` property to define the direction of the content of an element.
 
-- Family: [Poppins](https://fonts.google.com/specimen/Poppins)
-- Weights: 500
+### Useful resources
 
-## Construyendo tu proyecto
+- [writing-mode - CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) - This CSS property helped me to set the direction of the role text vertically in a simple way.
+- [clamp() - CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp) - This CSS feature helped me to manage the font size dynamically, setting a minimum value, a preferred value and a maximum value. This was very useful for responsive design.
 
-Siéntase libre de usar cualquier flujo de trabajo con el que se sienta cómodo. A continuación se sugiere un proceso, pero no sienta que necesita seguir estos pasos:
+## Author
 
-1. Inicializa tu proyecto como repositorio público en [GitHub](https://github.com/). La creación de un repositorio hará que sea más fácil compartir su código con la comunidad si necesita ayuda. Si no está seguro de cómo hacer esto, [lea este recurso](https://guias.makeitreal.camp/git) .
-2. Mire los diseños para comenzar a planificar cómo abordará el proyecto. Este paso es crucial para ayudarlo a pensar con anticipación en las clases de CSS para crear estilos reutilizables.
-3. Antes de agregar estilos, estructura tu contenido con HTML. Escribir tu HTML primero puede ayudar a centrar tu atención en crear contenido bien estructurado.
-4. Escriba los estilos base para su proyecto, incluidos los estilos de contenido general, como `font-family` y `font-size`.
-5. Comience a agregar estilos en la parte superior de la página y siga hacia abajo. Pase a la siguiente sección solo cuando esté satisfecho de haber completado el área en la que está trabajando.
+- Website - [Heberth López](https://www.heblopez.web.app)
 
-## Crea un `README.md` personalizado
+## Acknowledgments
 
-Recomendamos encarecidamente sobrescribir este `README.md` con uno personalizado. Proporcionamos una plantilla dentro del archivo [`README-template.md`](./README-template.md) en este código de inicio.
-
-La plantilla proporciona una guía sobre qué agregar. Un `README` personalizado lo ayudará a explicar su proyecto y reflexionar sobre sus aprendizajes. Por favor, siéntete libre de editar nuestra plantilla tanto como quieras.
-
-**¡Diviértete construyendo!** 🚀
+A special thanks to the MakeItReal team for the knowledge and support provided in each class and the feedback received on each project.
